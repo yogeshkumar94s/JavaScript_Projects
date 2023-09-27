@@ -12,7 +12,7 @@
     </ul>
 </body>
 <script>
-    function addLanguage(langName){
+    function addLanguage(langName){                //  not a optimized approach
         const li = document.createElement('li');
         li.innerHTML = `${langName}`
         document.querySelector('.language').appendChild(li)
@@ -20,24 +20,41 @@
     addLanguage("python")
     addLanguage("typescript")
 
-    function addOptiLanguage(langName){
+
+
+
+    function addOptiLanguage(langName){             // some optimized approach
         const li = document.createElement('li');
         li.appendChild(document.createTextNode(langName))
         document.querySelector('.language').appendChild(li)
     }
     addOptiLanguage('golang')
+    addOptiLanguage('mojo')
+
+
+ 
+
 
     //Edit
     const secondLang = document.querySelector("li:nth-child(2)")
-    console.log(secondLang);
-    //secondLang.innerHTML = "Mojo"
-    const newli = document.createElement('li')
+    // console.log(secondLang);
+    //secondLang.innerHTML = "Mojo"                      // not a good practice
+    const newli = document.createElement('li')            // good practice
     newli.textContent = "Mojo"
     secondLang.replaceWith(newli)
 
+
+
+
+
     //edit
-    const firstLang = document.querySelector("li:first-child")
+    const firstLang = document.querySelector("li:first-child")        // other method for edit
     firstLang.outerHTML = '<li>TypeScript</li>'
+
+
+
+
+    
 
     //remove
     const lastLang = document.querySelector('li:last-child')
@@ -45,4 +62,4 @@
 
 
 </script>
-</html>
+</html>  
